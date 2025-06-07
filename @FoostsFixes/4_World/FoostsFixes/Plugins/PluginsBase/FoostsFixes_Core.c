@@ -6,18 +6,26 @@ class FoostsFixes_Core: PluginBase
     
     void FoostsFixes_Core()
     {
+        Print("========================================");
+        Print("[FoostsFixes] CORE CONSTRUCTOR CALLED!!!");
+        Print("========================================");
+        
         // Initialize our item bringer system
+        Print("[FoostsFixes] Creating ItemBringer...");
         m_ItemBringer = new FF_ItemBringer();
         
-        // Initialize discovery system
+        Print("[FoostsFixes] Creating Discovery extension...");
         m_Discovery = new FF_DiscoveryExtension();
         
-        // Initialize widget hook system
+        Print("[FoostsFixes] Creating Widget hook extension...");
         m_WidgetHook = new FF_WidgetHookExtension();
+        
+        Print("[FoostsFixes] All components created successfully");
     }
     
     void ~FoostsFixes_Core()
     {
+        Print("[FoostsFixes] Core destructor called");
         delete m_ItemBringer;
         delete m_Discovery;
         delete m_WidgetHook;
@@ -25,13 +33,19 @@ class FoostsFixes_Core: PluginBase
     
     override void OnInit()
     {
+        Print("========================================");
+        Print("[FoostsFixes] CORE OnInit() CALLED!!!");
+        Print("========================================");
+        
         super.OnInit();
         
         // Register our plugin with VPP if possible
         Print("[FoostsFixes] Plugin initialized successfully");
         
         // Hook into VPP's ESP system
+        Print("[FoostsFixes] Registering RPC...");
         GetRPCManager().AddRPC("FoostsFixes", "BringItemToAdmin", this, SingeplayerExecutionType.Both);
+        Print("[FoostsFixes] RPC registered successfully");
     }
     
     // RPC handler for bringing items to admin
@@ -57,5 +71,5 @@ class FoostsFixes_Core: PluginBase
     }
 }
 
-// Global access point
+// Global access point with initialization
 FoostsFixes_Core g_FoostsFixes;
