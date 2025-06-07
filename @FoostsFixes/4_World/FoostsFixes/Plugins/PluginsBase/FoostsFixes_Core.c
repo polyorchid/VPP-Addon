@@ -2,6 +2,7 @@ class FoostsFixes_Core: PluginBase
 {
     private FF_ItemBringer m_ItemBringer;
     private FF_DiscoveryExtension m_Discovery;
+    private FF_WidgetHookExtension m_WidgetHook;
     
     void FoostsFixes_Core()
     {
@@ -10,12 +11,16 @@ class FoostsFixes_Core: PluginBase
         
         // Initialize discovery system
         m_Discovery = new FF_DiscoveryExtension();
+        
+        // Initialize widget hook system
+        m_WidgetHook = new FF_WidgetHookExtension();
     }
     
     void ~FoostsFixes_Core()
     {
         delete m_ItemBringer;
         delete m_Discovery;
+        delete m_WidgetHook;
     }
     
     override void OnInit()
