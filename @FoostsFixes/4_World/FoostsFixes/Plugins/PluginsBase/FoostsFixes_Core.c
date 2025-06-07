@@ -1,16 +1,21 @@
 class FoostsFixes_Core: PluginBase
 {
     private FF_ItemBringer m_ItemBringer;
+    private FF_DiscoveryExtension m_Discovery;
     
     void FoostsFixes_Core()
     {
         // Initialize our item bringer system
         m_ItemBringer = new FF_ItemBringer();
+        
+        // Initialize discovery system
+        m_Discovery = new FF_DiscoveryExtension();
     }
     
     void ~FoostsFixes_Core()
     {
         delete m_ItemBringer;
+        delete m_Discovery;
     }
     
     override void OnInit()
