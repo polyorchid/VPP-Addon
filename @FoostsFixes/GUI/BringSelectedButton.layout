@@ -1,0 +1,33 @@
+FrameWidgetClass {
+ ignorepointer 0
+ position 10 10
+ size 150 35
+ hexactpos 1
+ vexactpos 1
+ hexactsize 1
+ vexactsize 1
+ {
+  ButtonWidgetClass BringSelectedButton {
+   ignorepointer 0
+   color 1 1 1 1
+   position 0 0
+   size 150 35
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   text "Bring Selected Item"
+   font "gui/fonts/etelkatextpro"
+   "text color" ARGB(255, 255, 255, 255)
+   "text halign" center
+   "text valign" center
+   "bg color" ARGB(140, 50, 50, 150)
+   "bg color selected" ARGB(255, 70, 70, 200)
+   "bg color hover" ARGB(180, 60, 60, 175)
+   "bg color disabled" ARGB(80, 30, 30, 80)
+   "text color disabled" ARGB(120, 120, 120, 120)
+   "border color" ARGB(255, 100, 100, 100)
+   "border thickness" 1
+  }
+ }
+}
